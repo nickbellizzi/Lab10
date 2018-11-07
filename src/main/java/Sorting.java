@@ -20,7 +20,7 @@ public class Sorting {
     private static final int SORT_INCREMENT = 10000;
 
     /** Total number of values to try. */
-    private static final int TOTAL_SORT_VALUES = 100;
+    private static final int TOTAL_SORT_VALUES = 10;
 
     /** Total data size. */
     private static final int TOTAL_INTEGER_VALUES = 1000000;
@@ -28,12 +28,22 @@ public class Sorting {
     /**
      * Bubble sort.
      *
-     * @param array unsorted input array
+     * @param arr unsorted input array
      * @return the sorted array, or null on failure
      */
     @SuppressWarnings("unused")
-    private static int[] bubbleSort(final int[] array) {
-        return null;
+    private static int[] bubbleSort(final int[] arr) {
+        int len = arr.length;
+        for (int i = 0; i < len - 1; i++) {
+            for (int j = 0; j < len - i - 1; j++) {
+                if (arr[j] > arr[j + 1]) {
+                    int temp = arr[j];
+                    arr[j] = arr[j + 1];
+                    arr[j + 1] = temp;
+                }
+            }
+        }
+        return arr;
     }
 
     /**
